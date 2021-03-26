@@ -12,7 +12,7 @@ function App() {
   const addBase = (base) => {
     setPizza({ ...pizza, base })
   }
-  
+
   const addTopping = (topping) => {
     let newToppings;
     if(!pizza.toppings.includes(topping)){

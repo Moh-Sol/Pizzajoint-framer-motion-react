@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { motion } from 'framer-motion'
+import { containerVariants, nextVariants,childVariants } from './variants'
+
 
 const Order = ({ pizza }) => {
   return (
-    <div className="container order">
+    <motion.div className="container order"
+      variants={containerVariants}
+      initial='initial'
+      animate='animate'>
       <h2>Thank you for your order :)</h2>
-      <p>You ordered a {pizza.base} pizza with:</p>
+      <motion.p  variants={childVariants} >You ordered a {pizza.base} pizza with:</motion.p>
+      <motion.div variants={childVariants}>   
       {pizza.toppings.map(topping => <div key={topping}>{topping}</div>)}
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 
